@@ -128,3 +128,31 @@
     @apply font-sans;
   }
 }
+
+/*
+ * GDD 技術的留意事項3: ダブルタップズーム・コンテキストメニュー・iOSのバウンス
+ * スクロールを抑止する。本作はタップ判定領域が画面全面のため、意図しないブラウザ標準
+ * ジェスチャーが誤操作に直結する。
+ */
+html,
+body {
+  touch-action: manipulation;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* スタイルガイド「タイポグラフィ」節: 見出し・数値はOrbitron、日本語UIラベルはZen Kaku Gothic New */
+.font-orbitron {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+.font-zen {
+  font-family: var(--font-zen-kaku), sans-serif;
+}
